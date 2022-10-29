@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <title>Calculadora</title>
+    <style>
+        *{
+            font-family: 'Montserrat', sans-serif;
+        }
+        body{
+           background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1017%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(0%2c 92%2c 111%2c 1)'%3e%3c/rect%3e%3cpath d='M518.129%2c690.187C558.707%2c692.425%2c603.209%2c681.433%2c622.897%2c645.88C642.187%2c611.046%2c623.904%2c570.294%2c603.434%2c536.141C583.73%2c503.266%2c556.453%2c470.504%2c518.129%2c471.083C480.46%2c471.652%2c454.727%2c505.319%2c437.173%2c538.652C421.053%2c569.263%2c415.332%2c604.816%2c431.634%2c635.33C448.877%2c667.606%2c481.592%2c688.172%2c518.129%2c690.187' fill='rgba(4%2c 120%2c 245%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1481.446%2c709.836C1526.52%2c712.53%2c1574.017%2c695.683%2c1595.876%2c656.172C1617.226%2c617.58%2c1601.44%2c571.748%2c1578.773%2c533.914C1556.895%2c497.396%2c1524.008%2c466.005%2c1481.446%2c465.173C1437.63%2c464.316%2c1397.529%2c491.101%2c1377.295%2c529.974C1358.433%2c566.213%2c1368.011%2c608.424%2c1388.483%2c643.778C1408.9%2c679.037%2c1440.775%2c707.406%2c1481.446%2c709.836' fill='rgba(4%2c 120%2c 245%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M769.0061685271118 381.7577894828845L683.530495887462 470.27043959288096 772.0431459974585 555.7461122325307 857.5188186371082 467.2334621225342z' fill='rgba(4%2c 120%2c 245%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M791.8386703121215 143.58100177799727L819.8667134978402 224.9803496779291 901.2660613977721 196.95230649221037 873.2380182120534 115.55295859227854z' fill='rgba(4%2c 120%2c 245%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M403.095%2c315.879C440.733%2c316.208%2c481.386%2c312.265%2c502.558%2c281.146C526.092%2c246.555%2c528.637%2c199.514%2c506.357%2c164.102C485.216%2c130.5%2c442.68%2c120.053%2c403.095%2c123.059C368.748%2c125.667%2c341.926%2c148.648%2c323.837%2c177.962C304.526%2c209.255%2c288.274%2c247.553%2c306.596%2c279.435C324.958%2c311.387%2c366.244%2c315.557%2c403.095%2c315.879' fill='rgba(4%2c 120%2c 245%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M634.592%2c562.296C691.525%2c562.352%2c755.657%2c555.871%2c783.82%2c506.392C811.802%2c457.231%2c786.012%2c398.027%2c755.03%2c350.699C727.546%2c308.714%2c684.71%2c280.935%2c634.592%2c278.426C579.284%2c275.657%2c521.571%2c291.135%2c491.286%2c337.497C458.328%2c387.952%2c453.476%2c455.28%2c485.872%2c506.098C516.404%2c553.993%2c577.793%2c562.24%2c634.592%2c562.296' fill='rgba(4%2c 120%2c 245%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M878.2075510204044-55.59493489855902L786.0015777750017 27.42769632001996 869.0242089935807 119.63366956542262 961.2301822389834 36.61103834684364z' fill='rgba(4%2c 120%2c 245%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M257.835%2c424.136C289.273%2c422.937%2c318.15%2c408.651%2c335.316%2c382.286C354.366%2c353.026%2c366.1%2c315.357%2c348.157%2c285.405C330.536%2c255.99%2c292.12%2c252.43%2c257.835%2c252.949C224.748%2c253.45%2c190.199%2c260.349%2c172.128%2c288.07C152.504%2c318.172%2c150.243%2c358.209%2c169.395%2c388.614C187.543%2c417.425%2c223.81%2c425.434%2c257.835%2c424.136' fill='rgba(4%2c 120%2c 245%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M555.297%2c538.31C590.19%2c535.649%2c618.664%2c512.666%2c635.392%2c481.929C651.321%2c452.66%2c650.774%2c418.889%2c636.738%2c388.666C619.643%2c351.856%2c595.862%2c310.777%2c555.297%2c309.464C513.469%2c308.11%2c484.627%2c346.565%2c464.178%2c383.079C444.327%2c418.524%2c430.262%2c460.967%2c450.827%2c496.002C471.211%2c530.729%2c515.146%2c541.371%2c555.297%2c538.31' fill='rgba(4%2c 120%2c 245%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M920.3608961742715 164.60901275703813L833.5182193140162 245.59111904980426 1001.3430024670376 251.45168961729348z' fill='rgba(4%2c 120%2c 245%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M785.4725448524586 506.3525052270833L740.1322026581124 366.3554449370094 652.4015754434859 460.4350244728148z' fill='rgba(4%2c 120%2c 245%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M572.5356122366235 270.55312643722846L661.513623949982 310.16868961373467 701.1291871264883 221.19067790037607 612.1511754131297 181.57511472386983z' fill='rgba(4%2c 120%2c 245%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1017'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+        }
+        .calculadora{
+            box-shadow: 10px 11px 16px -3px rgba(0,0,0,0.75);
+            -webkit-box-shadow: 10px 11px 16px -3px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 11px 16px -3px rgba(0,0,0,0.75);
+            display: grid;
+            grid-template-columns: 50px, 50px, 50px, 50px;
+            grid-template-rows: 50px,50px,50px,50px,50px,50px,50px;
+            vertical-align: center;
+            background-color:  #193446;
+            height: 400px;
+            width: 300px;
+            margin: 10% auto;
+            border-radius: 10px;
+        }
+        .pantalla{
+            padding: 10px;
+            grid-column: 1 / 5;
+            grid-row: 1 / 3;
+           border-radius: 10px;
+           height: 100px;
+        }
+        #screen{
+            grid-row: 1 / 3;
+            text-align: right;
+            border-radius: 10px;
+            height: 80%;
+            width: 85%;
+            margin: auto;
+            vertical-align: center;
+            margin-top: 5%;
+           /* border: 1px solid white;*/
+            margin-left: 6%;
+            color: white;
+            background-color: #193446;
+            font-size: 30px;
+        }
+        #screen::placeholder{
+            color: white;
+        }
+        .operaciones{
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 3%;
+            grid-column: 1 / 5;
+            grid-row: 3 / 7;
+        }
+        .primera_fila{
+            grid-column: 1 / 5;
+            grid-row: 3;
+            height: 50px;
+        }
+        button{
+            font-size: medium;
+            font-weight: bold;
+            width: 15%;
+            height: 80%;
+            margin: 1% 4.3%;
+            border-radius: 10px;
+            border: none;
+            background-color: #aabdcc  ;
+            color:#0d6cbf ;
+            box-shadow: 16px 13px 13px -6px rgba(0,0,0,0.75);
+            -webkit-box-shadow: 16px 13px 13px -6px rgba(0,0,0,0.75);
+            -moz-box-shadow: 16px 13px 13px -6px rgba(0,0,0,0.75);
+        }
+        button:hover{
+            color: black;
+            font-weight: 900;
+        }
+        .mate{
+            color: #FF3764;
+        }
+        .mate:hover{
+            color: #0d6cbf;
+        }
+        .segunda_fila{
+            grid-column: 1 / 5;
+            grid-row: 4;
+            height: 50px;
+        }
+        .tercera_fila{
+            grid-column: 1 / 5;
+            grid-row: 5;
+            height: 50px;
+        }
+        .cuarta_fila{
+            grid-column: 1 / 5;
+            grid-row: 6;
+            height: 50px;
+        }
+        .quinta_fila{
+            grid-column: 1 / 5;
+            grid-row: 7;
+            height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="calculadora">
+        <div class="pantalla">
+            <input type="text" id="screen" name="screen" placeholder="0.0" disabled/><input id="memoria" type="hidden" value="0" />
+        </div>
+        <div class="operaciones">
+            <div class="primera_fila">
+                <button onclick="btnC()" class="mate">C</button>
+                <button onclick="operaciones('raiz'); return false;" class="mate">√</button>
+                <button onclick="operaciones('elevar'); return false;" class="mate">^</button>
+                <button onclick="operaciones('dividir'); return false;" class="mate">/</button>
+            </div>
+            <div class="segunda_fila">
+                <button onclick="btn7()">7</button>
+                <button onclick="btn8()">8</button>
+                <button onclick="btn9()">9</button>
+                <button onclick="operaciones('multiplicar'); return false;" class="mate">x</button>
+            </div>
+            <div class="tercera_fila">
+                <button onclick="btn4()">4</button>
+                <button onclick="btn5()">5</button>
+                <button onclick="btn6()">6</button>
+                <button onclick="operaciones('restar'); return false;" class="mate">-</button>
+            </div>
+            <div class="cuarta_fila">
+                <button onclick="btn1()">1</button>
+                <button onclick="btn2()">2</button>
+                <button onclick="btn3()">3</button>
+                <button onclick="operaciones('sumar'); return false;" class="mate">+</button>
+            </div>
+            <div class="quinta_fila">
+                <button onclick="btnSignal()">+/-</button>
+                <button onclick="btn0()">0</button>
+                <button onclick="btnPunto()">.</button>
+                <button onclick="operaciones('igual'); return false;" class="mate">=</button>
+            </div>
+            
+        </div>
+    </div>
+    <script>
+        function btn0(){
+                document.getElementById("screen").value += 0;
+        }
+        function btn1(){
+            document.getElementById("screen").value += 1;
+        }
+        function btn2(){
+            document.getElementById("screen").value += 2;
+        }
+        function btn3(){
+            document.getElementById("screen").value += 3;
+        }
+        function btn4(){
+            document.getElementById("screen").value += 4;
+        }
+        function btn5(){
+            document.getElementById("screen").value += 5;
+        }
+        function btn6(){
+            document.getElementById("screen").value += 6;
+        }
+        function btn7(){
+            document.getElementById("screen").value += 7;
+        }
+        function btn8(){
+            document.getElementById("screen").value += 8;
+        }
+        function btn9(){
+            document.getElementById("screen").value += 9;
+        }
+        function btnC(){
+            document.getElementById("screen").value = "";
+        }
+        function btnPunto(){
+            document.getElementById("screen").value += ".";
+        }
+        function btnSignal(){
+            document.getElementById("screen").value += "-";
+        }
+
+        function operaciones(op)
+        {
+
+            var ops = {
+                sumar: function sumarNumeros(n1, n2) {
+                    return (parseFloat(n1) + parseFloat(n2));
+                },
+
+                restar: function restarNumeros(n1, n2) {
+                    return (parseFloat(n1) - parseFloat(n2));
+                },
+                
+                multiplicar: function multiplicarNumeros(n1, n2) {
+                    return (parseFloat(n1) * parseFloat(n2));
+                },
+
+                dividir: function dividirNumeros(n1, n2) {
+                    return (parseFloat(n1) / parseFloat(n2));
+                },
+                elevar: function elevarNumeros(n1, n2) {
+                    return (parseFloat(n1) ** parseFloat(n2));
+                },
+                raiz: function raizNumeros(n1) {
+                    return (Math.sqrt(parseFloat(n1)));
+                }
+
+
+            };
+
+            var operacion;
+
+            switch(op) {
+                case 'sumar':
+                    var operando1 = document.getElementById("screen").value;
+                    document.getElementById("screen").value = operando1 + "(+)";
+                    operacion = document.getElementById("screen").value;
+                    document.getElementById("memoria").value = "suma";
+                    break;
+                case 'restar':
+                    var operando1 = document.getElementById("screen").value;
+                    document.getElementById("screen").value = operando1 + "(-)";
+                    operacion = document.getElementById("screen").value;
+                    document.getElementById("memoria").value = "resta";
+                    break;
+                case 'multiplicar':
+                    var operando1 = document.getElementById("screen").value;
+                    document.getElementById("screen").value = operando1 + "*";
+                    operacion = document.getElementById("screen").value;
+                    document.getElementById("memoria").value = "multiplicacion";
+                    break;
+                case 'dividir':
+                    var operando1 = document.getElementById("screen").value;
+                    document.getElementById("screen").value = operando1 + "/";
+                    operacion = document.getElementById("screen").value;
+                    document.getElementById("memoria").value = "division";
+                    break;
+                case 'elevar':
+                    var operando1 = document.getElementById("screen").value;
+                    document.getElementById("screen").value = operando1 + "^";
+                    operacion = document.getElementById("screen").value;
+                    document.getElementById("memoria").value = "exponente";
+                    break;
+                case 'raiz':
+                    var operando1 = document.getElementById("screen").value;
+                    document.getElementById("screen").value = operando1 + "√";
+                    operacion = document.getElementById("screen").value;
+                    document.getElementById("memoria").value = "radicacion";
+                    break;
+
+
+                case 'igual':	
+                    
+                    operacion = document.getElementById("screen").value;
+                    
+                    var memoriaop = document.getElementById("memoria").value;
+                    
+                    switch(memoriaop) {
+                        case 'suma':
+                            var operandos = operacion.split("(+)");
+                            var resultado = ops.sumar(operandos[0], operandos[1]);
+                            document.getElementById("screen").value = resultado.toFixed(2);
+                            break;
+                        case 'resta':
+                            var operandos = operacion.split("(-)");
+                            var resultado = ops.restar(operandos[0], operandos[1]);
+                            document.getElementById("screen").value = resultado.toFixed(2);
+                            break;
+                        case 'multiplicacion':
+                            var operandos = operacion.split("*");
+                            var resultado = ops.multiplicar(operandos[0], operandos[1]);
+                            document.getElementById("screen").value = resultado.toFixed(2);
+                            break;
+                        case 'division':
+                            var operandos = operacion.split("/");
+                            var resultado = ops.dividir(operandos[0], operandos[1]);
+                            document.getElementById("screen").value = resultado.toFixed(2);
+                            break;					
+                        case 'exponente':
+                            var operandos = operacion.split("^");
+                            var resultado = ops.elevar(operandos[0], operandos[1]);
+                            document.getElementById("screen").value = resultado.toFixed(3);
+                            break;	
+                        case 'radicacion':
+                            var operandos = operacion.split("√");
+                            var resultado = ops.raiz(operandos[0]);
+                            document.getElementById("screen").value = resultado.toFixed(3);
+                            break;
+                    }	
+                    
+
+                    break;
+                    
+
+            }
+
+
+        }
+
+    </script>
+</body>
+</html>
